@@ -10,14 +10,10 @@ output_path에 None을 지우고 변경된 이미지 파일을 저장할 경로�
 
 돌리면 끝
 
-결과물은 한사진에 대해 총 8개
+결과물은 한사진에 대해 총 4개
 시계방향 90도
 시계방향 90도에대한 상하반전 좌우 반전 상하 좌우반전
 
-반시계 방향 90도
-반시계 방향 90도에 대한 상하반전 좌우반전 상하좌우반전
-
-아마 저렇게하면 8개중에 분명 똑같은거 있을텐데 거르기 귀찮아서 걍 다 때려박음 귀찮아 나 잘거야
 '''
 
 path = './OID/Dataset/train/Ambulance'  # 이미지 파일이 있는 경로 입력 EX. ./img
@@ -46,6 +42,7 @@ for img_path in images_list:
     img_clockwise_ud_lr = cv2.flip(img_rotate_90_clockwise, -1)  # 상하 좌우 반전
     out_ = output_path + '{}_clockwise_ud_lr.jpg'.format(str(count))
     cv2.imwrite(out_, img_clockwise_ud_lr)
+    count = count + 1
 '''
     img_rotate_90_counterclockwise = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)  # 반시계 방향 회전=시계방향 상하좌우 반전
     out_ = output_path + '{}_counterclockwise.jpg'.format(str(count))
@@ -64,5 +61,5 @@ for img_path in images_list:
     out_ = output_path + '{}_ccounterclockwise_ud_lr.jpg'.format(str(count))
     cv2.imwrite(out_, img_counterclockwise_ud_lr)
 '''
-    count = count + 1
+   
 
