@@ -63,5 +63,6 @@ for img_path in images_list:
     img_counterclockwise_ud_lr = cv2.flip(img_rotate_90_counterclockwise, -1)  # 상하 좌우 반전=시계방향
     out_ = output_path + '{}_ccounterclockwise_ud_lr.jpg'.format(str(count))
     cv2.imwrite(out_, img_counterclockwise_ud_lr)
-    count = count + 1
 '''
+    count = count + 1
+
